@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "name": "Device 1",
+        "type": "type 1"
+    },
+    {
+        "id": 2,
+        "name": "Device 2",
+        "type": "type 2"
+    },
+    {
+        "id": 3,
+        "name": "Device 3",
+        "type": "type 3"
+    }
+]
