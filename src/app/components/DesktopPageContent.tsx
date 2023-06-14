@@ -15,8 +15,15 @@ const DesktopPageContent = ({ children, isDesktop }: Props) => {
     useEffect(() => {
         if (matches) {
             setShouldRenderDesktopContent(true);
+        } else {
+            setShouldRenderDesktopContent(false);
         }
     }, [matches])
+
+    useEffect(() => {
+        console.log('matches dekstop size', matches)
+        console.log('should render desktop', shouldRenderDesktopContent)
+    }, [matches, shouldRenderDesktopContent])
 
     return (
         <>

@@ -15,6 +15,8 @@ const MobilePageContent = ({ children, isMobile }: Props) => {
     useEffect(() => {
         if (matches) {
             setShouldRenderMobileContent(true);
+        } else {
+            setShouldRenderMobileContent(false);
         }
     }, [matches])
 
