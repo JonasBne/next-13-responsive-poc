@@ -1,17 +1,28 @@
 'use client';
 
+import { useEffect, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
 
 interface Props {
     children: React.ReactNode;
+    isDesktop: boolean;
 }
 
-export const DesktopPageContent = ({ children }: Props) => {
-    const isDesktop = useMediaQuery("(min-width: 768px)");
+const DesktopPageContent = ({ children, isDesktop }: Props) => {
+    const matches = useMediaQuery("(min-width: 768px)");
+    const [shouldRenderDesktopContent, setShouldRenderDesktopContent] = useState(isDesktop);
+    
+    useEffect(() => {
+        if (matches) {
+            setShouldRenderDesktopContent(true);
+        }
+    }, [matches])
 
     return (
         <>
-        { isDesktop && children }
+        { shouldRenderDesktopContent && children }
         </>
     )
 }
+
+export default DesktopPageContent;

@@ -1,1 +1,3 @@
-export const DesktopLayout = () => <div>DESKTOP LAYOUT</div>
+const DesktopLayout = () => <div>DESKTOP LAYOUT</div>
+
+export default DesktopLayout;

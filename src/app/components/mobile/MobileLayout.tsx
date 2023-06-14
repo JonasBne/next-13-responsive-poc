@@ -1,1 +1,3 @@
-export const MobileLayout = () => <div>MOBILE LAYOUT</div>
+const MobileLayout = () => <div>MOBILE LAYOUT</div>
+
+export default MobileLayout;

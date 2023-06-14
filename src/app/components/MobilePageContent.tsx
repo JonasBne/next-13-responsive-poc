@@ -1,17 +1,28 @@
 'use client';
 
+import { useEffect, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
 
 interface Props {
     children: React.ReactNode;
+    isMobile: boolean;
 }
 
-export const MobilePageContent = ({ children }: Props) => {
-    const isDesktop = useMediaQuery("(min-width: 768px)");
+const MobilePageContent = ({ children, isMobile }: Props) => {
+    const matches = useMediaQuery("(max-width: 768px)");
+    const [shouldRenderMobileContent, setShouldRenderMobileContent] = useState(isMobile);
+    
+    useEffect(() => {
+        if (matches) {
+            setShouldRenderMobileContent(true);
+        }
+    }, [matches])
 
     return (
         <>
-        { !isDesktop && children }
+        { shouldRenderMobileContent && children }
         </>
     )
 }
+
+export default MobilePageContent;
