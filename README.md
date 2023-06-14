@@ -1,4 +1,12 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next Responsive PoC
+
+## Description
+
+Problem:
+
+Let's say you need to create a responsive website and that you have designs for desktop and mobile versions. Imagine that there is no way to use media queries for those designs because they differ too much (for example: a mobile displays a list with cards and limited information, while a desktop shows a table with a lot of customization options). How would you do SSR in that case? The issue resides mainly around the `hydration` technique as described in the [React docs](https://react.dev/reference/react-dom/hydrate). You have to make sure that what is initially rendered on the server, also matches what is initially rendered on the client. So you have to decide on which layout you'll use to start with and both the server and client should render this HTML. Otherwise React will try to hydrate a DOM on the client that is different from the DOM that was rendered on the server. But, once the code runs on the client you should be able to take into account screen resizes etc.
+
+Starting from this problem, I've tried to come up with some approaches to handle responsive design in Next 13, without needing to give up its strengths such as server-side rendering.
 
 ## Getting Started
 
