@@ -1,0 +1,1 @@
+export const MobileLayout = () => <div>MOBILE LAYOUT</div>
